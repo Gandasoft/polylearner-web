@@ -1,4 +1,4 @@
-name: "SonarQube code scanning"
+name: Sonarqube scan
 on:
   push:
     branches:
