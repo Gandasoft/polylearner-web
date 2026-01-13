@@ -18,7 +18,11 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || "";
+const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || "YOUR_GOOGLE_CLIENT_ID";
+
+if (GOOGLE_CLIENT_ID === "YOUR_GOOGLE_CLIENT_ID") {
+  console.error("VITE_GOOGLE_CLIENT_ID is not set in your environment variables. Google Auth will not work.");
+}
 
 const App = () => (
   <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
